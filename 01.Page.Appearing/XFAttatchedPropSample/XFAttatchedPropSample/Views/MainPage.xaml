@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vw="clr-namespace:XFAttatchedPropSample.Views;assembly=XFAttatchedPropSample"
+             xmlns:vm="clr-namespace:XFAttatchedPropSample.ViewModels;assembly=XFAttatchedPropSample"
+             x:Class="XFAttatchedPropSample.Views.MainPage"
+             vw:AttachedProp.AppearingCommand="{Binding Loaded}" >
+
+  <ContentPage.BindingContext>
+    <vm:MainPageViewModel />
+  </ContentPage.BindingContext>
+
+  <Label Text="{Binding Message.Value}" FontSize="36" HorizontalOptions="Center" VerticalOptions="Center" />
+</ContentPage>
