@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:v="clr-namespace:XFAttatchedPropSample.Views;assembly=XFAttatchedPropSample"
+             xmlns:vm="clr-namespace:XFAttatchedPropSample.ViewModels;assembly=XFAttatchedPropSample"
+             x:Class="XFAttatchedPropSample.Views.MainPage"
+             v:AttachedProp.AppearingCommand="{Binding Loaded}" >
+
+  <ContentPage.BindingContext>
+    <vm:MainPageViewModel />
+  </ContentPage.BindingContext>
+
+  <StackLayout>
+    <Label Text="{Binding Message.Value}" FontSize="36" HorizontalOptions="Center" />
+    <WebView Source="{Binding Url.Value}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" v:AttachedProp.NavigatedCommand="{Binding Navigated}" />
+  </StackLayout>
+</ContentPage>
